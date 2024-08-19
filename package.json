@@ -1,0 +1,28 @@
+{
+  "name": "zod-prettify-error",
+  "version": "0.0.1",
+  "description": "prettify zod errors",
+  "repository": "https://github.com/KalmonJ/zod-prettify-error",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [
+    "zod",
+    "errors",
+    "validation",
+    "react",
+    "node"
+  ],
+  "author": "KalmonJ",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^22.4.1"
+  }
+}
