@@ -34,7 +34,6 @@ function createErrorString(error: unknown) {
 
   if (!(error instanceof ZodError)) return (error as Error).message
 
-
   for (let index = 0; index < error.errors.length; index++) {
     const errorItem = error.errors[index];
 
@@ -46,7 +45,6 @@ function createErrorString(error: unknown) {
 
       return acc
     }, "")
-
 
     if (!("expected" in errorItem)) {
       errorMessage += `Error # ${index + 1}: ${errorItem.message} at: ${extractPath(errorItem.path)}; `
