@@ -5,7 +5,9 @@
   "repository": "https://github.com/KalmonJ/zod-prettify-error",
   "main": "dist/index.js",
   "scripts": {
-    "test": "vitest"
+    "build": "tsc",
+    "test": "vitest",
+    "build:types": "tsc -p ./configs/tsconfig.types.json"
   },
   "keywords": [
     "zod",

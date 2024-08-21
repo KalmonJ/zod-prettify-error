@@ -28,7 +28,6 @@ export function fromError(error: unknown) {
   }
 }
 
-
 function createErrorString(error: unknown) {
   let errorMessage = ""
 

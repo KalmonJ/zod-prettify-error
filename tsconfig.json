@@ -3,5 +3,10 @@
   "compilerOptions": {
     "outDir": "dist"
   },
-  "exclude": ["node_modules", "*.config.ts", "dist"]
+  "exclude": [
+    "node_modules",
+    "*.config.ts",
+    "dist",
+    "__tests__"
+  ]
 }
