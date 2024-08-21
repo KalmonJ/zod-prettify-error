@@ -16,19 +16,24 @@ export function validate<S extends z.ZodTypeAny, TData>(schema: S, data: TData) 
   }
 }
 
-export function fromError(error: ZodError) {
+export function fromError(error: unknown) {
 
   function toString() {
-    return createErrorString(error as ZodError)
+    return createErrorString(error)
   }
 
   return {
-    toString
+    toString,
+    error
   }
 }
 
-function createErrorString(error: ZodError<any>) {
+
+function createErrorString(error: unknown) {
   let errorMessage = ""
+
+  if (!(error instanceof ZodError)) return (error as Error).message
+
 
   for (let index = 0; index < error.errors.length; index++) {
     const errorItem = error.errors[index];

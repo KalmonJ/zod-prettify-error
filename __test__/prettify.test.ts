@@ -1,5 +1,5 @@
 import { z } from "zod"
-import { validate } from "../core/prettify"
+import { fromError, validate } from "../core"
 import { vi } from "vitest"
 
 const anySchema = z.object({
@@ -24,9 +24,23 @@ test("Should prettify zod error", () => {
 
   const res = parser.prettify()
 
-  console.log(res, "res")
 
-  expect(parser.toString).toHaveBeenCalled()
-  expect(parser.toString).toHaveBeenCalledTimes(1)
+  expect(parser.prettify).toHaveBeenCalled()
+  expect(parser.prettify).toHaveBeenCalledTimes(1)
   expect(res).toHaveLength(2)
+})
+
+test("Should pprettify zod error by error", async () => {
+
+
+  try {
+    anySchema.parse(data)
+  } catch (error) {
+    const validationError = fromError(error)
+
+    const errorString = validationError.toString()
+
+    expect(errorString).toBeTruthy()
+  }
+
 })
